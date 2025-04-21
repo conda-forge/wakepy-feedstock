@@ -1,5 +1,5 @@
 {% set name = "wakepy" %}
-{% set version = "0.10.1" %}
+{% set version = "0.10.2.post1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/wakepy-{{ version }}.tar.gz
-  sha256: 8c124e6bec03fd5afe8aff7a6c529d8ce90de976a82f0abc432fe30e5862838e
+  sha256: c968b8b7061d30ab193747ce7fb5226bc61c26b005e4a2792a19211f83cf71ac
 
 build:
   noarch: python
   entry_points:
     - wakepy = wakepy.__main__:main
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
